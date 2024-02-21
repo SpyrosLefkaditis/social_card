@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Icons Dark Theme</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome CSS -->
+  <style>
+    body {
+      background-color: #212529;
+      color: #fff;
+      padding-top: 50px;
+    }
+
+    .social-card {
+      background-color: #343a40;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      font-size: 24px;
+    }
+
+    .social-icons a {
+      color: #adb5bd;
+      margin-right: 10px;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    #photo-input {
+      margin-top: 20px;
+      color: #fff;
+    }
+
+    #photo-input input[type=file] {
+      display: none;
+    }
+
+    #photo-input label {
+      background-color: #343a40;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #photo-input label:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center">
+        <h1>Social Icons</h1>
+        <div class="social-card">
+          <div class="social-icons">
+            <a href="#" onclick="showCustomContent('Instagram')"><i class="fab fa-instagram"></i></a>
+            <a href="#" onclick="showCustomContent('Facebook')"><i class="fab fa-facebook"></i></a>
+            <a href="#" onclick="showCustomContent('Github')"><i class="fab fa-github"></i></a>
+            <a href="#" onclick="showCustomContent('Stack Overflow')"><i class="fab fa-stack-overflow"></i></a>
+            <a href="#" onclick="showCustomContent('LinkedIn')"><i class="fab fa-linkedin"></i></a>
+            <a href="#" onclick="showCustomContent('NFC Payment')"><i class="fas fa-credit-card"></i></a> <!-- NFC payment icon -->
+          </div>
+        </div>
+        <div id="custom-content"></div> <!-- Placeholder for custom content -->
+        <div id="photo-input">
+          <label for="file-input">Capture Photo</label>
+          <input type="file" id="file-input" accept="image/*">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    function showCustomContent(platform) {
+      // Define custom content
+      var customContent = `
+        <div class="container">
+          <h1>Hello Spyros Lefkaditis</h1>
+          <p>This is your dark-themed page!</p>
+          <p>You clicked on ${platform}</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="img-fluid qr-code" alt="QR code - Wikipedia">
+          <a href="#" class="btn btn-primary">Open</a>
+        </div>
+      `;
+      
+      // Replace content of #custom-content with customContent
+      document.getElementById("custom-content").innerHTML = customContent;
+    }
+  </script>
+</body>
+
+</html>
